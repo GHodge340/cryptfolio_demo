@@ -1,0 +1,76 @@
+{
+  "id": "BTC",
+  "currency": "BTC",
+  "symbol": "BTC",
+  "name": "Bitcoin",
+  "logo_url": "https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/btc.svg",
+  "status": "active",
+  "price": "64870.90998163",
+  "price_date": "2021-11-11T00:00:00Z",
+  "price_timestamp": "2021-11-11T00:53:00Z",
+  "circulating_supply": "18869631",
+  "max_supply": "21000000",
+  "market_cap": "1224090133988",
+  "market_cap_dominance": "0.4187",
+  "num_exchanges": "399",
+  "num_pairs": "72845",
+  "num_pairs_unmapped": "5446",
+  "first_candle": "2011-08-18T00:00:00Z",
+  "first_trade": "2011-08-18T00:00:00Z",
+  "first_order_book": "2017-01-06T00:00:00Z",
+  "rank": "1",
+  "rank_delta": "0",
+  "high": "67601.47703029",
+  "high_timestamp": "2021-11-08T00:00:00Z",
+  "1d": {
+    "volume": "64409839900.16",
+    "price_change": "-2227.55622690",
+    "price_change_pct": "-0.0332",
+    "volume_change": "15517270871.69",
+    "volume_change_pct": "0.3174",
+    "market_cap_change": "-41971097952.16",
+    "market_cap_change_pct": "-0.0332"
+  },
+  "7d": {
+    "volume": "283896382226.61",
+    "price_change": "3321.87390432",
+    "price_change_pct": "0.0540",
+    "volume_change": "-24941695531.90",
+    "volume_change_pct": "-0.0808",
+    "market_cap_change": "63082603537.50",
+    "market_cap_change_pct": "0.0543"
+  },
+  "30d": {
+    "volume": "1453646360482.86",
+    "price_change": "8817.60608676",
+    "price_change_pct": "0.1573",
+    "volume_change": "-37151945602.84",
+    "volume_change_pct": "-0.0249",
+    "market_cap_change": "167977615683.99",
+    "market_cap_change_pct": "0.1591"
+  },
+  "365d": {
+    "volume": "22013079389359.48",
+    "price_change": "48890.48200477",
+    "price_change_pct": "3.0594",
+    "volume_change": "11238747115027.46",
+    "volume_change_pct": "1.0431",
+    "market_cap_change": "927839079354.96",
+    "market_cap_change_pct": "3.1319"
+  },
+  "ytd": {
+    "volume": "20104373631382.03",
+    "price_change": "31994.29544191",
+    "price_change_pct": "0.9732",
+    "volume_change": "10137894637353.99",
+    "volume_change_pct": "1.0172",
+    "market_cap_change": "613014373504.77",
+    "market_cap_change_pct": "1.0032"
+  }
+}
+
+ <p>{userIds[1]}</p>
+                    <p>{userIds[2]}</p>
+                    <p>{userIds[3]}</p>
+                    <p>{userIds[4]}</p>
+                    <p>{userIds[5]}</p> 
