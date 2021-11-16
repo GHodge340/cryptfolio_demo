@@ -35,7 +35,7 @@ function Mainpage() {
     //const [loadHolding, setLoadHolding] = useState("Loading Data..")
     const [names, setNames] = useState([]) //
     const [currentprice, setCurrentPrice] = useState([])
-    //const [qty, setQty] = useState([])
+    const [qty, setQty] = useState([])
     const [value, setValue] = useState([])
     const [bitcoinPrice, setBitcoinPrice] = useState("")
     const [dollaSign, setDollaSign] = useState("")
@@ -95,10 +95,11 @@ function Mainpage() {
             //LOAD INDIVIDUAL VARIABLE ARRAYS TO ORGANIZE DATA
             let symbolPrices = [] //CURRENT PRICE
             let symbolNames = [] //TICKER SYMBOL
+            let symbolQty = []
             for (let u = 0; u < apiData.length; u++) {
                 symbolPrices.push(parseFloat(apiData[u]["price"]))
                 symbolNames.push(apiData[u]["id"])
-                //symbolQty.push(userIds[u]["qty"])
+                symbolQty.push(userIds[u]["qty"])
             }
             console.log(symbolNames)
             console.log(symbolPrices)
@@ -158,7 +159,7 @@ function Mainpage() {
             //UPDATE STATE IN UI VARIABLES
             apiData = [{}]//CLEAR API OBJECT DATA
             setNames(reorderNames)
-            //setQty(reorderQty)
+            setQty(reorderQty)
             setCurrentPrice(reorderPrices)
             setValue(reorderValues)
             setBitcoinPrice(btcDisplay)
@@ -200,11 +201,11 @@ function Mainpage() {
                 <h1 className="Title-text">PORTFOLIO VALUE:</h1>
                 <h1 className="Title-text">{dollaSign}{pfValue}</h1>
             </div>
-            <div className="div-line">
+            <div className="div-line"></div>
             <Container>
               <Row>
                 <Col>
-                  <h2>HOLDINGS</h2>
+                  <h2>VALUES</h2>
                   <Table striped bordered hover variant="dark" size="sm">
                     <thead>
                         <tr>
@@ -278,7 +279,7 @@ function Mainpage() {
                   </Table>
                 </Col>
                 <Col>
-                <div className="div-line">
+                <div className="div-line"></div>
                 <h2>PRICES</h2>
                     <Table striped bordered hover variant="dark" size="sm">
                         <thead>
@@ -351,12 +352,85 @@ function Mainpage() {
                             </tr>
                         </tbody>
                     </Table>
-                </div>
+                </Col>
+                <Col>
+                <div className="div-line"></div>
+                <h2>HOLDINGS</h2>
+                    <Table striped bordered hover variant="dark" size="sm">
+                        <thead>
+                            <tr>
+                                <th><FontAwesomeIcon icon={faChartPie} /></th>
+                                <th>CRYPTO</th>
+                                <th>QUANTITY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>{names[0]}</td>
+                                <td>{qty[0]}</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>{names[1]}</td>
+                                <td>{qty[1]}</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>{names[2]}</td>
+                                <td>{qty[2]}</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>{names[3]}</td>
+                                <td>{qty[3]}</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>{names[4]}</td>
+                                <td>{qty[4]}</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>{names[5]}</td>
+                                <td>{qty[5]}</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>{names[6]}</td>
+                                <td>{qty[6]}</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>{names[7]}</td>
+                                <td>{qty[7]}</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>{names[8]}</td>
+                                <td>{qty[8]}</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>{names[9]}</td>
+                                <td>{qty[9]}</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>{names[10]}</td>
+                                <td>{qty[10]}</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>{names[11]}</td>
+                                <td>{qty[11]}</td>
+                            </tr>
+                        </tbody>
+                    </Table>
                 </Col>
               </Row>
-
                 </Container>
-            </div>
+
         </>
     );
 }
