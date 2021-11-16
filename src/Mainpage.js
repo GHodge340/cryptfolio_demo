@@ -15,21 +15,7 @@ import { faChartPie } from '@fortawesome/free-solid-svg-icons';
 
 function Mainpage() {
 
-    const [proxy, setProxy] = useState("https://cryptalgo-proxy.herokuapp.com/")
-    const [nomics, setNomics] = useState("https://api.nomics.com/v1/currencies/ticker?key=23ea3d57a9af9203f012a0c7e849afc9")
-    const [userIds, setUserIds] = useState([
-        { uid: 1, ticker: "DOGEDASH", asset: 'Doge Dash', qty: 390857.669, price: 0 },
-        { uid: 10, ticker: "DOT", asset: 'Polkadot', qty: 26.24000000, price: 0 },
-        { uid: 8, ticker: "ETH", asset: 'Ethereum', qty: 1.01440355, price: 0 },
-        { uid: 9, ticker: "ADA", asset: 'Cardano', qty: 211.1, price: 0 },
-        { uid: 3, ticker: "FLOKI", asset: 'Floki Inu (ERC-20)', qty: 1087451.205, price: 0 },
-        { uid: 6, ticker: "MATIC", asset: 'Polygon', qty: 100.1, price: 0 },
-        { uid: 0, ticker: "SUPER2", asset: 'SuperFarm', qty: 111.666, price: 0 },
-        { uid: 2, ticker: "RPG2", asset: 'Revolve Games', qty: 111.353, price: 0 },
-        { uid: 4, ticker: "ALU", asset: 'Altura', qty: 539.918, price: 0 },
-        { uid: 5, ticker: "BNB", asset: 'Binance Coin', qty: 0.0087, price: 0 },
-        { uid: 11, ticker: "SAFEMOON", asset: 'SafeMoon', qty: 36734655, price: 0 },
-        { uid: 7, ticker: "USDC", asset: 'USD Coin', qty: 12.420261, price: 0 }])
+
 /*
     const [watchListIds, setWatchListIds] = useState([
         { wid: 3, assetname: 'Polkadot' },
@@ -46,18 +32,34 @@ function Mainpage() {
     */
 
     const [pfValue, setPFValue] = useState("Loading Data..") //BALANCE
-    const [loadHolding, setLoadHolding] = useState("Loading Data..")
+    //const [loadHolding, setLoadHolding] = useState("Loading Data..")
     const [names, setNames] = useState([]) //
     const [currentprice, setCurrentPrice] = useState([])
-    const [qty, setQty] = useState([])
+    //const [qty, setQty] = useState([])
     const [value, setValue] = useState([])
     const [bitcoinPrice, setBitcoinPrice] = useState("")
     const [dollaSign, setDollaSign] = useState("")
 
-    useEffect(async () => {
+    useEffect(() => {
 
         //API REQUEST
         async function request() {
+          const proxy = "https://cryptalgo-proxy.herokuapp.com/"
+          const nomics = "https://api.nomics.com/v1/currencies/ticker?key=23ea3d57a9af9203f012a0c7e849afc9"
+          const userIds = [
+              { uid: 1, ticker: "DOGEDASH", asset: 'Doge Dash', qty: 390857.669, price: 0 },
+              { uid: 10, ticker: "DOT", asset: 'Polkadot', qty: 26.24000000, price: 0 },
+              { uid: 8, ticker: "ETH", asset: 'Ethereum', qty: 1.01440355, price: 0 },
+              { uid: 9, ticker: "ADA", asset: 'Cardano', qty: 211.1, price: 0 },
+              { uid: 3, ticker: "FLOKI", asset: 'Floki Inu (ERC-20)', qty: 1087451.205, price: 0 },
+              { uid: 6, ticker: "MATIC", asset: 'Polygon', qty: 100.1, price: 0 },
+              { uid: 0, ticker: "SUPER2", asset: 'SuperFarm', qty: 111.666, price: 0 },
+              { uid: 2, ticker: "RPG2", asset: 'Revolve Games', qty: 111.353, price: 0 },
+              { uid: 4, ticker: "ALU", asset: 'Altura', qty: 539.918, price: 0 },
+              { uid: 5, ticker: "BNB", asset: 'Binance Coin', qty: 0.0087, price: 0 },
+              { uid: 11, ticker: "SAFEMOON", asset: 'SafeMoon', qty: 36734655, price: 0 },
+              { uid: 7, ticker: "USDC", asset: 'USD Coin', qty: 12.420261, price: 0 }]
+
 
             console.log(`Inside Async Function\nINITIATING API FETCH REQUEST..`)
             let response = await fetch(proxy + nomics)
@@ -72,12 +74,11 @@ function Mainpage() {
             //FIND TSYMBOL ARRAY DATA
             let apiData = res.filter(function (id) {
                 for (let int = 0; int < userIds.length; int++) {
-                    if (id.id == userIds[int]["ticker"]) {
+                    if (id.id === userIds[int]["ticker"]) {
                         return true
                     }
                 }
             })
-
             //GETS BTC Bitcoin Price
             let btcData = res.filter(function (id) {
               if (id.id === "BTC"){
@@ -99,7 +100,8 @@ function Mainpage() {
                 symbolNames.push(apiData[u]["id"])
                 //symbolQty.push(userIds[u]["qty"])
             }
-
+            console.log(symbolNames)
+            console.log(symbolPrices)
             //FIND INDEXES OF CORRESPONDING USER HOLDINGS
             let idxs = []
             for (let b = 0; b < apiData.length; b++){
@@ -156,7 +158,7 @@ function Mainpage() {
             //UPDATE STATE IN UI VARIABLES
             apiData = [{}]//CLEAR API OBJECT DATA
             setNames(reorderNames)
-            setQty(reorderQty)
+            //setQty(reorderQty)
             setCurrentPrice(reorderPrices)
             setValue(reorderValues)
             setBitcoinPrice(btcDisplay)
@@ -171,8 +173,6 @@ function Mainpage() {
                   request();
               }, 240000);
             }
-
-
         } request()
     }, []) // [] STOPS REACT FROM MAKING MULTIPLE REQUESTS ON LOAD
 
