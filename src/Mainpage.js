@@ -279,7 +279,6 @@ function Mainpage() {
                   </Table>
                 </Col>
                 <Col>
-                <div className="div-line"></div>
                 <h2>PRICES</h2>
                     <Table striped bordered hover variant="dark" size="sm">
                         <thead>
@@ -354,7 +353,6 @@ function Mainpage() {
                     </Table>
                 </Col>
                 <Col>
-                <div className="div-line"></div>
                 <h2>HOLDINGS</h2>
                     <Table striped bordered hover variant="dark" size="sm">
                         <thead>
