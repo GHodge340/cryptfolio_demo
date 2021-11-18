@@ -68,6 +68,11 @@
   line-height: 0%;
 }
 
+.update-font{
+  color: #282c34;
+  font-size: calc(6px + 2vmin);
+  text-align: center;
+}
 .div-line{
   background-color: #282c34;
   height: 1px;

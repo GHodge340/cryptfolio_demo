@@ -39,6 +39,7 @@ function Mainpage() {
     const [value, setValue] = useState([])
     const [bitcoinPrice, setBitcoinPrice] = useState("")
     const [dollaSign, setDollaSign] = useState("")
+    const [updateTime, setUpdate] = useState("")
 
     useEffect(() => {
 
@@ -158,6 +159,11 @@ function Mainpage() {
 
             //UPDATE STATE IN UI VARIABLES
             apiData = [{}]//CLEAR API OBJECT DATA
+            let time = Date.now()
+            let date = new Date(time)
+            console.log(`Date: ${date.toLocaleTimeString()}`)
+            let timeUpdate = date.toLocaleString()
+            setUpdate(timeUpdate)
             setNames(reorderNames)
             setQty(reorderQty)
             setCurrentPrice(reorderPrices)
@@ -201,6 +207,7 @@ function Mainpage() {
                 <h1 className="Title-text">PORTFOLIO VALUE:</h1>
                 <h1 className="Title-text">{dollaSign}{pfValue}</h1>
             </div>
+            <p className="update-font">Last Updated: {updateTime}</p>
             <div className="div-line"></div>
             <Container>
               <Row>
