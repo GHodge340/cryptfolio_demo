@@ -48,7 +48,7 @@ function Mainpage() {
           const proxy = "https://cryptalgo-proxy.herokuapp.com/"
           const nomics = "https://api.nomics.com/v1/currencies/ticker?key=23ea3d57a9af9203f012a0c7e849afc9"
           const userIds = [
-              { uid: 1, ticker: "DOGEDASH", asset: 'Doge Dash', qty: 390857.669, price: 0 },
+              { uid: 1, ticker: "DOGEDASH", asset: 'Doge Dash', qty: 393741.267, price: 0 },
               { uid: 10, ticker: "DOT", asset: 'Polkadot', qty: 26.24000000, price: 0 },
               { uid: 8, ticker: "ETH", asset: 'Ethereum', qty: 1.01440355, price: 0 },
               { uid: 9, ticker: "ADA", asset: 'Cardano', qty: 211.1, price: 0 },
@@ -211,7 +211,7 @@ function Mainpage() {
             <div className="div-line"></div>
             <Container>
               <Row>
-                <Col>
+                <Col lg={4} md={12} sm={12} >
                   <h2>VALUES</h2>
                   <Table striped bordered hover variant="dark" size="sm">
                     <thead>
@@ -285,7 +285,7 @@ function Mainpage() {
                     </tbody>
                   </Table>
                 </Col>
-                <Col>
+                <Col lg={4} md={12} sm={12}>
                 <h2>PRICES</h2>
                     <Table striped bordered hover variant="dark" size="sm">
                         <thead>
@@ -359,7 +359,7 @@ function Mainpage() {
                         </tbody>
                     </Table>
                 </Col>
-                <Col>
+                <Col lg={4} md={12} sm={12}>
                 <h2>HOLDINGS</h2>
                     <Table striped bordered hover variant="dark" size="sm">
                         <thead>
