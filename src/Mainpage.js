@@ -77,9 +77,9 @@ function Mainpage() {
             let stockBrokers = []
             let stockValues = []
             let stockPrices = []
-            
 
-            //CREATE STOCK ARRAY 
+
+            //CREATE STOCK ARRAY
             for (let r = 0; r <stocks.length; r++){
                 stockNames.push(stocks[r]["ticker"])
                 stockQty.push(stocks[r]["qty"])
@@ -164,6 +164,7 @@ function Mainpage() {
             const userIds = [
                 { uid: 1, ticker: "DOGEDASH", asset: 'Doge Dash', qty: 393741.267, price: 0 },
                 { uid: 10, ticker: "DOT", asset: 'Polkadot', qty: 26.24000000, price: 0 },
+                { uid: 2, ticker: "SOL", asset: 'Solana', qty: 5.032000000, price: 0 },
                 { uid: 8, ticker: "ETH", asset: 'Ethereum', qty: 1.01440355, price: 0 },
                 { uid: 9, ticker: "ADA", asset: 'Cardano', qty: 211.1, price: 0 },
                 { uid: 3, ticker: "FLOKI", asset: 'Floki Inu (ERC-20)', qty: 1087451.205, price: 0 },
